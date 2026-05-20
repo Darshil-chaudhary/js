@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add javascript in html</title>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body id ="body">
+    <h1 id="title">Welcome to gandhinagar...!</h1>
+    <button onclick="changecolor()">change color</button>
+    <button onclick="" id="btn">change theme</button>
+    
+    <!-- internal js -->
+     <script>
+        function changecolor(){
+            document.getElementById('title').style = "color:blue";
+        }
+        // alert('hello dear')
+     </script>
+
+     <!-- external js -->
+      <script src="./app.js"></script>
+</body>
+</html>
