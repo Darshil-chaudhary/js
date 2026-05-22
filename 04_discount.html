@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+        }
+        .container{
+            border: 1px solid black;
+            height: 320px;
+            width: 295px;
+            background-color:#7ea8eb;
+            border-radius: 15px;
+            padding: 5px 5px;
+        }
+        input{
+        width: 85%;
+        border-radius: 12px;
+        padding: 10px 12px;
+        margin: 10px 0px;
+        }
+        button{
+            border-radius: 10px;
+            width: 60%;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="number" id="amount" placeholder="Enter your Amount :">
+        <button onclick="ApplyDiscount()">Apply Discount</button>
+        <div id="info"></div>
+    </div>
+
+    <script>
+        let customerName = prompt("Enter Your Name :")
+        function ApplyDiscount() {
+            let amount = Number(document.getElementById('amount').value);
+            let discount = 10;
+
+            let discountAmount = (amount * discount) / 100;
+            let finalAmount = amount - discountAmount;
+
+            document.getElementById('info').innerHTML = `<h2>Customer Name:${customerName}</h2>
+            <h3>Purchase Amount :${amount}</h3>
+            <h3>Discount Amount :${discountAmount}</h3>
+            <h3>||=====================||</h3>
+            <h3>Final Amount :${finalAmount}</h3>`;
+        }
+    </script>
+</body>
+
+</html>
