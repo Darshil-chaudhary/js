@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            width: 650px;
+            margin: 4% auto;
+            justify-content: space-between;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, .1);
+            display: flex;
+        }
+
+        .img {
+            display: flex;
+        }
+
+        #container p {
+            margin: 15px 0px;
+        }
+
+        button {
+            padding: 5px 2px;
+            width: 80px;
+            border-radius: 4px;
+            color: white;
+            background-color: burlywood;
+            cursor: pointer;
+            margin-top: 28px;
+        }
+
+        .dt {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        let product = {
+            name: "Macbook Air",
+            description: "Smooth and fast ",
+            category: "Electronics",
+            price: 69999,
+            stock: 0,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-_1cFyrVpz2AWOSfgA5vPBSgziYfsOvXoEw&s"
+        }
+
+        let productcontainer = document.getElementById('container')
+
+        let text = product.stock > 0 ? "in stock" : "out of stock"
+
+        productcontainer.innerHTML = `
+         <div class="img">
+            <img src=${product.image} alt="">
+        </div>
+         <div>
+            <h3>${product.name}</h3>
+         <p>${product.description}</p>
+         <p>${product.category}</p>
+         <div class="dt">
+            <p>₹${product.price}</p>
+            <span>${text}</span>
+        </div>
+         <button>shop</botton>
+        </div>
+        `
+    </script>
+</body>
+
+</html>
