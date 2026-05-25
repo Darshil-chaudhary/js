@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <div class="container">
+        <input type="text" id="userEmail" placeholder="Enter your Email">
+        <input type="text" id="userPassword" placeholder="Enter Pasword">
+        <button onclick="authuser()">login</button>
+        <h3 id="ans"></h3>
+    </div>
+    <script>
+        function authuser() {
+            let userEmail = document.getElementById('userEmail').value;
+            let userPassword = document.getElementById('userPassword').value;
+
+            let msg;
+
+            correctuserEmail = "darshilxtech@gmail.com";
+            correctuserPassword = "123@pipl";
+
+            if (userEmail === "" && userPassword === "") {
+                msg = "All field are required";
+            }
+            else if (userEmail === correctuserEmail && userPassword === correctuserPassword){
+                msg = "Login Successfully";
+            }
+            else{
+                msg = "Incorrect UserEmail & userPassword";
+            }
+            document.getElementById('ans').innerText = msg;
+        }
+    </script>
+</body>
+
+</html>
