@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="info"></h2>
+    <h3 id="gradeshow"></h3>
+    <script>
+        
+
+        let xyz={
+            name:"hm",
+            address:"Gandhinagar"
+        }
+      
+        document.getElementById('info').innerText="info is"+(xyz.name);
+       
+    
+
+        let marks = Number(prompt("Enter marks"));
+
+        let grade=null;
+
+if (marks >= 90) {
+    grade=("A");
+}
+else if (marks >= 80) {
+    console.log("Grade B");
+}
+else if (marks >= 70) {
+    console.log("Grade C");
+}
+else if (marks >= 60) {
+    console.log("Grade D");
+}
+else {
+    console.log("Fail");
+}
+document.getElementById('gradeshow').innerText="your grade is"+grade;
+
+    </script>
+</body>
+</html>

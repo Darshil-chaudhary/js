@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container"></div>
+  
+ <script>
+    let card = {
+    name: "Apple 2026 MacBook Air 13-inch",
+    description: "AI-powered laptop with M5 chip, Liquid Retina Display, 16GB Unified Memory, and 512GB SSD Storage",
+    category: "Electronics",
+    brand: "Apple",
+    color: "Silver",
+    display: "13.6-inch Liquid Retina Display",
+    processor: "Apple M5 Chip",
+    ram: "16GB Unified Memory",
+    storage: "512GB SSD",
+    camera: "12MP Center Stage Camera",
+    security: "Touch ID",
+    price: 117990,
+    originalPrice: 119900,
+    discount: "2%",
+    rating: 5.0,
+    reviews: 18,
+    stock: 300,
+    availability: "In Stock",
+    image: "https://m.media-amazon.com/images/I/71upqrupfYL._SL1500_.jpg"
+}
+
+      let productcontainer = document.getElementById('container')
+      let text = card.stock > 0 ? "in stock" : "out of stock"
+      
+      productcontainer.innerHTML = `
+      <img src="" alt="">
+      `
+ </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 550px;
+            padding: 20px;
+        }
+
+        input {
+            width: 100%;
+            margin: 8px 0px;
+            padding: 15px;
+            border-radius: 0.2rem;
+            background: #fff;
+            border: 1px solid #d0d7de;
+            color: #111827;
+        }
+
+        button {
+            padding: 12px 10px;
+            background-color: black;
+            color: white;
+            border-radius: 0.4rem;
+            border: none;
+        }
+
+        #product-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .card {
+            width: 350px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 8px;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+        }
+
+        .card h3 {
+            margin: 8px 8px;
+            color: #f8fafc;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" placeholder="Enter product Name :" id="name">
+        <input type="text" placeholder="Enter product Description:" id="description">
+        <input type="text" placeholder="Enter product Price:" id="price">
+        <input type="text" placeholder="Enter product Image:" id="image">
+        <button onclick="product()">Shop Now</button>
+    </div>
+    <div id="product-card"></div>
+
+    <script>
+        let productcontainer = document.getElementById('product-card')
+        function product() {
+            let name = document.getElementById('name').value;
+            let description = document.getElementById('description').value;
+            let price = document.getElementById('price').value;
+            let image = document.getElementById('image').value;
+
+            let card = ""
+
+            if (name === "" || description === "" || price === "" || image === "") {
+                alert("All field required..!")
+            }
+            else {
+                card += `<div class="card">
+            <img src="${image}" alt="">
+            <h3>${name}</h3>
+            <h3>${description}</h3>
+            <h3>Price:₹${price}</h3>
+            </div>
+            `
+            }
+            productcontainer.innerHTML += card;
+
+        }
+
+    </script>
+</body>
+
+</html>
