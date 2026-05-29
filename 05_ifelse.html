@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="05_style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <input type="text" id="emailid" placeholder="Enter Email">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="loginauth()">Login</button>
+        </div>
+    </div>
+
+    <script>
+        function loginauth() {
+            let email = document.getElementById('emailid').value;
+            let password = document.getElementById('password').value;
+
+            if (email === "" || password === "") {
+                alert("All field are Required..!")
+                return
+            }
+            else if (email !== "darshilvinodbhai@gmail.com" && email !== "admin@gmail.com") {
+                alert("Invalid Email id..!")
+            }
+            else if (password !== "123@mm" && password !== "123@pipl") {
+                alert("Invalid password..!")
+            }
+            else if (email === "darshilvinodbhai@gmail.com" && password === "123@mm") {
+                window.location.href = "05_index.html"
+            }
+            else if (email === "admin@gmail.com" && password === "123@pipl") {
+                window.location.href = "05_admin.html"
+            }
+            else {
+                alert("Invalid Email and password")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
