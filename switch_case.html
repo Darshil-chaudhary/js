@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch case</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            width: 450px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .container label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .container input,
+        .container select {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .container input:focus,
+        .container select:focus {
+            border-color: #667eea;
+        }
+
+        .container button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .container button:hover {
+            background: #5647d6;
+            transform: translateY(-2px);
+        }
+
+        #msg-box {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f4f6ff;
+            border-left: 5px solid #667eea;
+        }
+
+        #msg-box h2 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        #msg-box h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        #msg-box p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="">Enter your name</label>
+        <input type="text" id="studentname">
+        <label for="">Enter Event Name</label>
+        <select name="" id="event">
+            <option value="">Select option</option>
+            <option value="web">Web Devlopement</option>
+            <option value="mobile">Mobile devlopement</option>
+            <option value="cyber">Cyber security</option>
+        </select>
+        <button onclick="registration()">Registration</button>
+        <div id="msg-box"></div>
+    </div>
+    <script>
+        function registration() {
+            let studentname = document.getElementById('studentname').value
+            let event = document.getElementById('event').value
+
+            let message = document.getElementById('msg-box');
+
+            let fees = "";
+            let msg = "";
+
+            switch (event) {
+
+                case 'web':
+                    msg = "web devlopement";
+                    fees = 5000;
+                    break;
+
+                case 'mobile':
+                    msg = "Mobile Developement";
+                    fees = 1800;
+                    break;
+
+                case 'cyber':
+                    msg = "cyber security";
+                    fees = 2000;
+                    break;
+
+                default:
+                    alert("Please select option");
+                    break;
+            }
+
+            message.innerHTML = `
+       <h2>StudentName:${studentname}</h2>
+       <h3>course:${msg}</h3>
+       <p><b>Fees:</b>${fees}</p>
+       <p><b>Event Date:</b>05-06-26</p>
+       `
+        }
+    </script>
+</body>
+
+</html>
