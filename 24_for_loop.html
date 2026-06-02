@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            padding: 30px;
+        }
+
+        .card {
+            width: 300px;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            /* Image fits perfectly */
+            background: #fff;
+            padding: 10px;
+        }
+
+        .card h2 {
+            margin: 15px 10px;
+            font-size: 22px;
+            color: #222;
+        }
+
+        .card p {
+            margin: 8px 15px;
+            color: #555;
+        }
+
+        .card p:nth-child(4) {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .card p:last-child {
+            display: inline-block;
+            margin: 15px 0 20px;
+            padding: 6px 15px;
+            background: #e0f2fe;
+            color: #0369a1;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .title {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .title p {
+            margin: 14px auto;
+            width: 50%;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Discover Amazing Products at Unbeatable Prices</h1>
+        <p>Browse our wide range of high-quality products, from electronics and fashion to accessories and home
+            essentials. Shop with confidence and find everything you need in one place.</p>
+    </div>
+    <div id="container">
+    </div>
+    <script src="./24_forloop.js"></script>
+    <script>
+        let card = "";
+
+        for (i = 0; i < products.length; i++) {
+            card += `
+            <div class="card">
+            <img src=${products[i].image} alt="">
+            <h2>${products[i].name}</h2>
+            <p>${products[i].desc}</p>
+            <p>${products[i].price}</p>
+            <p>${products[i].category}</p>
+        </div> `;
+        }
+        document.getElementById('container').innerHTML = card;
+    </script>
+</body>
+
+</html>
