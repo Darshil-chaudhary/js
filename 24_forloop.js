@@ -18,7 +18,7 @@ const products = [
         desc: "Fitness tracking smartwatch with heart rate monitor.",
         price: 4999,
         category: "Electronics",
-        image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ78D97_sWbYPSUc7Bo9LFmKohcmt4uUIRegUINwWTSaPgH9J5l-z2XxTm0ANNIC-QX8zo1ff830e3nXFxz-x7uKcrPdanHxHrcb97CUbED3ppcJdSNwo28qDk"
+        image: "https://m.media-amazon.com/images/I/61EclBYcocL._AC_UF1000,1000_QL80_.jpg"
     },
     {
         name: "Running Shoes",
