@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for of loop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 4px 8px rgba(187, 8, 8, 0.1);
+            border-radius: 10px;
+            width: 1400px;
+            margin: 3% auto;
+        }
+
+        .img img {
+            width: 720px;
+            margin-top: 100px;
+            margin-right: 180px;
+        }
+
+        .details h3 {
+            /* font-family: 'Courier New', Courier, monospace; */
+            color: rgb(186, 241, 97);
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .details span {
+            font-size: 25px;
+            color: rgb(0, 177, 71);
+        }
+
+        .details p {
+            padding: 5px;
+            font-size: 15px;
+            color: rgb(50, 50, 206);
+        }
+
+        #key-feature li {
+            font-size: 18px;
+            margin: 8px 25px;
+            color: rgb(50, 50, 206);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="img">
+            <img src="https://itechstore.co.in/uploads/products/mac_m5_product.webp" alt="">
+        </div>
+        <div class="details">
+
+            <h3>Apple 2024 MacBook Air 13″ 512GB SSD Storage</h3>
+            <span>Price : ₹1,25,000</span>
+            <p> Description : Supercharged by M3 — The blazing-fast MacBook Air</p>
+            <ul id="key-feature"></ul>
+
+        </div>
+    </div>
+    <script>
+        const feature = [
+            "Apple M3 Chip",
+            "13.6-inch Liquid Retina Display",
+            "18 Hours Battery Life",
+            "8GB Unified Memory",
+            "256GB SSD Storage",
+            "Backlit Magic Keyboard",
+            "1080p FaceTime HD Camera",
+            "Touch ID Fingerprint Sensor",
+            "Wi-Fi 6E Connectivity",
+            "Fanless Silent Design"
+        ]
+
+        let data = "";
+
+        for (let features of feature) {
+            data += `<li>${features}</li>`
+        }
+        document.getElementById('key-feature').innerHTML = data;
+    </script>
+</body>
+
+</html>
