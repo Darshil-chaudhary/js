@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopCart</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOufbdZcKGC-OeFoJKOBZ2Jj6WmSWp43KmUg&s">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- top-bar -->
+    <div class="top-bar">
+        <div class="no">
+            <p><i class="bi bi-telephone"></i>+917984523299</p>
+        </div>
+        <div class="discount">
+            <p>Get 50% off on selected items | shop now</p>
+        </div>
+        <div class="eng">
+            <a href="#">Eng</a>
+            <a href="#">Location</a>
+        </div>
+    </div>
+    <!-- nav-bar -->
+    <header>
+        <div class="icon">
+            <img src="https://www.shopokart.in/cdn/shop/files/png_SHOPOKART_4363b3db-040c-4357-8a73-348a1e85831e.png?height=628&pad_color=ffffff&v=1749061920&width=1200"
+                alt="">
+        </div>
+        <div class="bar">
+            <a href="#">Categories</a>
+            <a href="#">Deals</a>
+            <a href="#">What's New</a>
+            <a href="#">Delivery</a>
+        </div>
+        <div class="shop-icon">
+            <input type="search" placeholder="Seach-Products">
+            <i class="bi bi-search"></i>
+            <i class="bi bi-person-fill-add"></i>
+            <i class="bi bi-bag-heart-fill"></i>
+        </div>
+    </header>
+    <!-- hero-section -->
+    <div class="hero">
+        <div class="grab">
+            <p>Grab upto 50% off on <br> Selected Headphone</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+    <!-- button -->
+    <div class="filter-containers">
+        <div class="filter">
+            <button class="filter-btn">Headphone Type ▼</button>
+            <button class="filter-btn">Price ▼</button>
+            <button class="filter-btn">Review ▼</button>
+            <button class="filter-btn">Color ▼</button>
+            <button class="filter-btn">Material ▼</button>
+            <button class="filter-btn">Offer ▼</button>
+            <button class="filter-btn">All Filters ⚙</button>
+        </div>
+        <button class="sort-btn">Sort by ▼</button>
+    </div>
+    <h2>Headphones For You!</h2>
+    <!-- card -->
+    <div id="product-container"> </div>
+    <hr class="line">
+    <h2>Similar items You Might Like!</h2>
+
+    <div id="product-container2"> </div>
+
+    <hr class="line">
+    <!-- footer -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+                <h2>ShopCart</h2>
+                <p>
+                    ShopCart is your trusted destination for the latest electronics,
+                    smartphones, laptops, gaming accessories, smart gadgets, and
+                    home appliances. We provide quality products, secure payments,
+                    and fast delivery across the country.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Categories</a>
+                <a href="#">Deals</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Customer Service</h3>
+                <a href="#">My Account</a>
+                <a href="#">Track Order</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Returns</a>
+                <a href="#">Support Center</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p>📍 Ahmedabad, Gujarat</p>
+                <p>📞 +91 79845 23299</p>
+                <p>📧 darshilxtech@gmail.com</p>
+
+                <div class="social">
+                    <span>📘</span>
+                    <span>📸</span>
+                    <span>🐦</span>
+                    <span>▶</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider">
+            <p>⚡ Trusted Electronics • Fast Delivery • Secure Payments • 24/7 Support</p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 ShopCart Electronics. All Rights Reserved.
+                Designed & Developed by <span>Darshil Chaudhry</span>
+            </p>
+        </div>
+
+    </footer>
+
+    <script src="./app.js"></script>
+    <script>
+        let card = "";
+        let card2 = "";
+
+        for (let i = 0; i < products.length; i++) {
+            card += `
+             <div class="container">
+            <img src="${products[i].image}" alt="">
+            <h3>${products[i].name}</h3>
+            <h1>$${products[i].price}</h1>
+            <p>${products[i].description}</p>
+            <span>⭐${products[i].rating}</span><br>
+            <button class="add">Add to cart</button>
+        </div>
+            `
+        }
+        for (let i = 0; i < product1.length; i++) {
+            card2 += `
+             <div class="container2">
+            <img src="${product1[i].image}" alt="">
+            <h3>${product1[i].name}</h3>
+            <h1>$${product1[i].price}</h1>
+            <p>${product1[i].description}</p>
+            <span>⭐${product1[i].rating}</span><br>
+            <button class="add">Add to cart</button>
+        </div>
+            `
+        }
+        document.getElementById('product-container').innerHTML = card;
+        document.getElementById('product-container2').innerHTML = card2;
+    </script>
+</body>
+
+</html>
