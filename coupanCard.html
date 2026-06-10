@@ -1,36 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTP verification</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* margin: 22% 38%; */
+            background-color: rgb(169, 136, 87);
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(73, 9, 134);
+        }
+
+        .label {
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+            width: 350px;
+            height: 300px;
+            border: 1 black;
+            padding-bottom: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 8% auto;
+            display: grid;
+            grid-template-columns: 1fr, 1fr;
+            background-color: rgba(73, 87, 2, 0.34);
+            border-radius: 14px;
+        }
+
+        button {
+            padding: 10px 15px;
+            width: 115px;
+            border-radius: 20px;
+            margin-left: 60px;
+            color: aliceblue;
+            background-color: rgb(104, 10, 192);
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            color: aliceblue;
+            background-color: rgb(13, 13, 239);
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome To Snitch</h1>
-    <button id="coupanbtn">Get Discount</button>
-    <h2 id="result"></h2>
+    <div class="label">
+        <h1>Welcome To Snitch</h1>
+        <button id="coupanbtn">Get Discount</button>
+        <h2 id="result"></h2>
+    </div>
     <script>
 
         const coupanbtn = document.getElementById('coupanbtn');
-        coupanbtn.addEventListener('click',verifyotp);
+        coupanbtn.addEventListener('click', verifyotp);
 
-        function verifyotp(){
+        function verifyotp() {
             const correctcode = "7984"
             const MAX_ATTEMPTS = 3;
             let attempts = 0;
             let usercode = "";
 
-            do{
+            do {
                 usercode = prompt(`Enter Coupan Code ${attempts}/${MAX_ATTEMPTS} :`);
                 attempts++;
 
-                if(usercode === correctcode){
-                  document.getElementById('result').innerText = "You got flat 50% discount..!";
-                  return;
+                if (usercode === correctcode) {
+                    document.getElementById('result').innerText = "You got flat 50% discount..!";
+                    return;
                 }
-            }while(usercode != correctcode && attempts < MAX_ATTEMPTS);
+            } while (usercode != correctcode && attempts < MAX_ATTEMPTS);
 
         }
     </script>
 </body>
+
 </html>
