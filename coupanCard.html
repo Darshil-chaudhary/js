@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP verification</title>
+</head>
+<body>
+    <h1>Welcome To Snitch</h1>
+    <button id="coupanbtn">Get Discount</button>
+    <h2 id="result"></h2>
+    <script>
+
+        const coupanbtn = document.getElementById('coupanbtn');
+        coupanbtn.addEventListener('click',verifyotp);
+
+        function verifyotp(){
+            const correctcode = "7984"
+            const MAX_ATTEMPTS = 3;
+            let attempts = 0;
+            let usercode = "";
+
+            do{
+                usercode = prompt(`Enter Coupan Code ${attempts}/${MAX_ATTEMPTS} :`);
+                attempts++;
+
+                if(usercode === correctcode){
+                  document.getElementById('result').innerText = "You got flat 50% discount..!";
+                  return;
+                }
+            }while(usercode != correctcode && attempts < MAX_ATTEMPTS);
+
+        }
+    </script>
+</body>
+</html>

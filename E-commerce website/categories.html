@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- top-bar -->
+    <div class="top-bar">
+        <div class="no">
+            <p><i class="bi bi-telephone"></i>+917984523299</p>
+        </div>
+        <div class="discount">
+            <p>Get 50% off on selected items | shop now</p>
+        </div>
+        <div class="eng">
+            <a href="#">Eng</a>
+            <a href="#">Location</a>
+        </div>
+    </div>
+    <!-- nav-bar -->
+    <header>
+        <div class="icon">
+            <img src="https://www.shopokart.in/cdn/shop/files/png_SHOPOKART_4363b3db-040c-4357-8a73-348a1e85831e.png?height=628&pad_color=ffffff&v=1749061920&width=1200"
+                alt="">
+        </div>
+        <div class="bar">
+            <a href="index.html">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">What's New</a>
+            <a href="#">Delivery</a>
+        </div>
+        <div class="shop-icon">
+            <input type="search" placeholder="Seach-Products">
+            <i class="bi bi-search"></i>
+            <i class="bi bi-person-fill-add"></i>
+            <i class="bi bi-bag-heart-fill"></i>
+        </div>
+    </header>
+    <!-- card section -->
+    <h2>Popular Categories</h2>
+    <div id="product-container"> </div>
+    <hr class="line">
+    <script src="./app.js"></script>
+    <script>
+        let card = "";
+
+        for (let i = 0; i < products.length; i++) {
+            card += `
+             <div class="container">
+            <img src="${products[i].image}" alt="">
+            <h3>${products[i].name}</h3>
+            <h1>$${products[i].price}</h1>
+            <p>${products[i].description}</p>
+            <span>⭐${products[i].rating}</span><br>
+            <button class="add">Add to cart</button>
+        </div>
+            `
+        }
+        document.getElementById('product-container').innerHTML = card;
+    </script>
+</body>
+
+</html>

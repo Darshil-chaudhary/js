@@ -156,22 +156,26 @@ header {
 
 /* card */
 #product-container {
-    margin: 30px auto;
-    gap: 25px;
     width: 95%;
-    height: 950px;
+    margin: 30px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    height: 950px;
 }
 
 .container {
-    background: white;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 15px;
-    transition: 0.3s;
     cursor: pointer;
+    text-align: center;
     overflow: hidden;
     text-align: left;
+    transition: 0.3s;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.1);
+}
+.container:hover{
+    transform: translateY(-10px);
 }
 
 .container img {
@@ -182,36 +186,26 @@ header {
     margin-bottom: 15px;
 }
 
-.container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
 .container h3 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 8px;
-    color: #222;
 }
 
 .container h1 {
-    font-size: 24px;
-    color: #000;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
 .container p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 16px;
     margin-bottom: 12px;
 }
 
 .container span {
+    font-size: 14px;
     display: block;
-    color: #22c55e;
-    font-size: 18px;
+    margin-bottom: 4px;
     font-weight: bold;
-    margin-bottom: 15px;
 }
 
 .add {
@@ -219,7 +213,7 @@ header {
     border-radius: 22px;
     background: transparent;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.5s;
     border: 1;
 }
 
@@ -237,21 +231,20 @@ h2 {
 }
 
 /* card 2 */
-#product-container2 {
-    margin: 30px auto;
-    gap: 25px;
+#product-container2{
     width: 95%;
-    height: 460px;
+    margin: 30px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    height: 950px;
 }
 
-.container2 {
-    background: white;
-    border-radius: 10px;
+.container2{
+    border-radius: 15px;
     padding: 15px;
-    transition: 0.3s;
     cursor: pointer;
+    text-align: center;
     overflow: hidden;
     text-align: left;
 }
@@ -264,36 +257,26 @@ h2 {
     margin-bottom: 15px;
 }
 
-.container2:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
 .container2 h3 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 8px;
-    color: #222;
 }
 
 .container2 h1 {
-    font-size: 24px;
-    color: #000;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
 .container2 p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 16px;
     margin-bottom: 12px;
 }
 
 .container2 span {
+    font-size: 14px;
     display: block;
-    color: #22c55e;
-    font-size: 18px;
+    margin-bottom: 4px;
     font-weight: bold;
-    margin-bottom: 15px;
 }
 
 .line {
