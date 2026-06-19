@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-management</title>
+    <link rel="stylesheet" href="product_management.css">
+</head>
+
+<body>
+    <table>
+        <caption>
+            <h1>Product Management</h1>
+        </caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="ProductTable"></tbody>
+    </table>
+    <div class="form-container">
+        <input type="text" placeholder="Enter Name" id="name">
+        <input type="text" placeholder="Enter Description" id="description">
+        <input type="text" placeholder="Enter Price" id="price">
+        <input type="text" placeholder="Enter Category" id="category">
+        <input type="text" placeholder="Enter img url" id="image">
+        <button onclick="addproduct()">Add Product</button>
+    </div>
+    <script src="./product_management.js"></script>
+    <script>
+        const displayproducts = () => {
+            const productTable = document.getElementById("ProductTable");
+            productTable.innerHTML = "";
+
+            products.forEach((product) => {
+                productTable.innerHTML += `
+                <tr>
+                    <td>${product.id}</td>
+                    <td><img src="${product.image}" alt="${product.name}"></td>
+                    <td>${product.name}</td>
+                    <td>${product.description}</td>
+                    <td>${product.price}</td>
+                    <td>${product.category}</td>
+                    <td><button>Edit</button><button class="btn2">Delete</button></td>
+                 </tr>`
+            })
+        }
+        const addproduct = () =>{
+            let name = document.getElementById("name").value;
+            let description = document.getElementById("description").value;
+            let price = document.getElementById("price").value;
+            let category = document.getElementById("category").value;
+            let image = document.getElementById("image").value;
+
+            const newproduct = {
+                id:products.length + 1,
+                name,
+                description,
+                price,
+                category,
+                image
+            }
+            products.push(newproduct);
+            displayproducts();
+        }
+        displayproducts();
+    </script>
+</body>
+
+</html>

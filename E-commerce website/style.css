@@ -161,7 +161,6 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
-    height: 950px;
 }
 
 .container {
@@ -172,9 +171,10 @@ header {
     overflow: hidden;
     text-align: left;
     transition: 0.3s;
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 }
-.container:hover{
+
+.container:hover {
     transform: translateY(-10px);
 }
 
@@ -237,7 +237,6 @@ h2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
-    height: 950px;
 }
 
 .container2{
@@ -247,6 +246,12 @@ h2 {
     text-align: center;
     overflow: hidden;
     text-align: left;
+    transition: 0.3s;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container2:hover {
+    transform: translateY(-10px);
 }
 
 .container2 img {
@@ -278,6 +283,7 @@ h2 {
     margin-bottom: 4px;
     font-weight: bold;
 }
+
 
 .line {
     width: 80%;
