@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider in js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       #slider{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+       }
+       .right-side img{
+        height: 300px;
+        width: 400px;
+
+
+
+
+        object-fit: cover;
+        border-radius: 10px;
+       }
+       .left-side h1{
+        font-size: 35px;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 8px ;
+        position: relative;
+        top: 20px;
+        left: 40px;
+       }
+       .left-side p{
+        font-size: 18px;
+        margin: 8px 4px;
+        position: relative;
+        top: 30px;
+        left: 35px;
+       }
+       .left-side button{
+        padding: 8px 15px;
+        border-radius: 8px;
+        border: none;
+        background-color: rgb(218, 182, 140);
+        color: black;
+        margin: 18px 25px;
+        position: relative;
+        top: 20px;
+        left: 30px;
+       }
+       .left-side{
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.1);
+        height: 250px;
+        width: 920px;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <button id="prebtn" class="prev"><i class="fa-solid fa-angle-left"></i></button>
+        <div id="slider"></div>
+        <button id="nextbtn" class="next"><i class="fa-solid fa-angle-right"></i></button>
+    </div>
+    <script>
+        const heroSlides = [
+            {
+                id: 1,
+                title: "Taste the Freshness in Every Bite",
+                description:
+                    "Experience chef-crafted dishes made with the freshest ingredients, delivering unforgettable flavors straight to your table.",
+                buttonText: "Order Now",
+                image: "https://media.istockphoto.com/id/1147252758/photo/healthy-vegetarian-food-background-vegetables-pesto-and-lentil-curry-with-tofu.jpg?s=612x612&w=0&k=20&c=tfLYLtT-f_I-tnmOdb_6WHRhIQa8jXy7SkFakC-P-LU=",
+            },
+            {
+                id: 2,
+                title: "Your Favorite Meals, Delivered Fast",
+                description:
+                    "Enjoy hot and delicious meals delivered to your doorstep with speed, quality, and care.",
+                buttonText: "View Menu",
+                image: "https://res.cloudinary.com/hz3gmuqw6/image/upload/c_fill,f_auto,h_400,q_60,w_600/v1/classpop/676136f4c8c7a.jpg",
+            },
+            {
+                id: 3,
+                title: "Exclusive Deals for Food Lovers",
+                description:
+                    "Discover daily specials, family combos, and limited-time offers crafted to satisfy every craving.",
+                buttonText: "Explore Offers",
+                image: "https://media.hellofresh.com/w_3840,q_auto,f_auto,c_limit,fl_lossy/hellofresh_website/se/cms/SEO/vegetarisk_matkasse.jpg",
+            },
+        ];
+
+        const prebtn = document.getElementById('prebtn');
+        const nextbtn = document.getElementById('nextbtn');
+        const slider = document.getElementById('slider');
+
+        let slidecount = 0;
+
+        function displaycontent() {
+            slider.innerHTML = `
+         <div class="left-side">
+             <h1>${heroSlides[slidecount].title}</h1>
+             <p>${heroSlides[slidecount].description}</p>
+             <button>${heroSlides[slidecount].buttonText}</button>
+         </div>
+    <div class="right-side">
+        <img src="${heroSlides[slidecount].image}" alt="">
+    </div>
+            `;
+        }
+        prebtn.addEventListener('click',()=>{
+            slidecount--;
+            if(slidecount < 0){
+                slidecount = heroSlides.length - 1;
+            }
+            displaycontent();
+        })
+        nextbtn.addEventListener('click',()=>{
+            slidecount++;
+            if(slidecount >= heroSlides.length){
+                slidecount = 0;
+            }
+            displaycontent();
+        })
+        displaycontent()
+    </script>
+</body>
+
+</html>

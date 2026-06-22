@@ -53,25 +53,50 @@
                  </tr>`
             })
         }
-        const addproduct = () =>{
+        let editId = "";
+        const addproduct = () => {
             let name = document.getElementById("name").value;
             let description = document.getElementById("description").value;
             let price = document.getElementById("price").value;
             let category = document.getElementById("category").value;
             let image = document.getElementById("image").value;
 
-            const newproduct = {
-                id:products.length + 1,
-                name,
-                description,
-                price,
-                category,
-                image
+            if (editId) {
+                const product = products.find((D) => D.id == editId);
+
+                product.name = name;
+                product.description = description;
+                
+
             }
-            products.push(newproduct);
-            displayproducts();
+            else {
+                const newproduct = {
+                    id: products.length + 1,
+                    name,
+                    description,
+                    price,
+                    category,
+                    image
+                }
+                products.push(newproduct);
+                displayproducts();
+            }
         }
         displayproducts();
+
+        const editProduct = (id) => {
+            const product = products.find((D) => D.id == id);
+
+            editId = product.id;
+
+            document.getElementById("name").value = product.name;
+            document.getElementById("description").value = product.description;
+            document.getElementById("price").value = product.price;
+            document.getElementById("category").value = product.category;
+            document.getAnimations("image").value = product.image;
+            document.getElementById("btn").innerText = "Update product";
+
+        }
     </script>
 </body>
 
