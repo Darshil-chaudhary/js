@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom in js</title>
+</head>
+
+<body>
+    <h1 id="demo1">Darshil Chaudhry</h1>
+    <h2 class="demo2">Hello one</h2>
+    <h2 class="demo2">Hello two</h2>
+    <h2 class="demo2">Hello three</h2>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto fuga exercitationem magnam sapiente tempore omnis
+        maxime, quos officiis facere veritatis?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam sunt ad blanditiis. Doloremque,
+        distinctio?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, fugit.</p>
+    <button id="btn">Change Img</button>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF8_cf44FNFfEUiIiU80iYS57JD5oZmHyG0uXKoXl6N4_u0j3HtXrph4M&s=10"
+        alt="" width="500px" id="tech">
+
+    <div id="box">
+
+    </div>
+
+    <script>
+        document.getElementById("demo1").innerText = "D Chaudhry";
+        document.getElementById("demo1").style = "background-color:blue";
+        document.getElementsByClassName('demo2')[1].innerText = "hello onee";
+        document.getElementsByClassName('demo2')[2].innerText = "hello onneee";
+
+        document.getElementsByTagName("p")[1].innerText = "<h1>Jay Gujrat..!</h1>"
+
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener("click", () => {
+            document.getElementById('tech').src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRoGi5YprS6QTK_1BV6YfUoDtnDISTJdA_6flsIg49DKRqzxzpsVbqDB3Q&s=10"
+        })
+
+        const digi = document.createElement("h1");
+        digi.innerText = "Welcome Home";
+        digi.classList.add("digi");
+
+        const box =document.getElementById("box");
+        box.appendChild(digi);
+    </script>
+</body>
+
+</html>
