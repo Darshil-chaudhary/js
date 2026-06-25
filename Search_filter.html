@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search and filter in js</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .product-card img {
+            width: 200px;
+            height: 150px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="search" id="search" placeholder="Search Products">
+
+        <select name="category" id="category">
+            <option value="all">All</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Furniture">Furniture</option>
+        </select>
+
+        <select name="sort" id="sort">
+            <option value=""></option>
+            <option value="low">Low to High</option>
+            <option value="high">High to Low</option>
+        </select>
+
+    </div>
+    <div id="product-container">
+
+    </div>
+
+    <script>
+        const products = [
+            {
+                name: "iPhone 15",
+                description: "Apple smartphone with A16 Bionic chip and advanced camera system",
+                price: 799,
+                category: "Electronics",
+                image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRgDVLegDd3sEzXpp-VAUpugHDya4A9FK5GlFmQLSFMkAOUjbM8vTFrLejCceQWbVmplfEpkIe6LH-kW2skg3jiXUMC1OV_VQ"
+            },
+            {
+                name: "Samsung Galaxy S24",
+                description: "Android smartphone with AI features and AMOLED display",
+                price: 849,
+                category: "Electronics",
+                image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR7CcAjOwScLtqwozQ_PHn0JligXSyGNWaILmD27MJj1bq3oe7R1DQbsTQdC6nJkIuXruMSzxqwpsRcM9QBqBv-b0-WBGkN"
+            },
+            {
+                name: "Nike Air Max 270",
+                description: "Comfortable running shoes with Air cushioning",
+                price: 150,
+                category: "Footwear",
+                image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQsdnYIWi7eclv-wfEa9DZpfRLgDMpRBNgJrIFbew9eKDBE1NXafVFCzx7TfT67vxZ3V_g7C94CIF3hjlXfh_3-7lmfohQuaS_O-XohGvECLeCV7xegYTnWHQ"
+            },
+            {
+                name: "Adidas Ultraboost Light",
+                description: "Lightweight performance running shoes",
+                price: 190,
+                category: "Footwear",
+                image: "https://rukminim2.flixcart.com/image/1500/1500/xif0q/shoe/5/0/6/-original-imahgbrwwhcwrm8p.jpeg"
+            },
+            {
+                name: "Wooden Dining Table",
+                description: "6-seater solid wood dining table",
+                price: 450,
+                category: "Furniture",
+                image: "https://m.media-amazon.com/images/I/61ZUR4pFKyL.jpg"
+            },
+            {
+                name: "Office Ergonomic Chair",
+                description: "Adjustable chair with lumbar support",
+                price: 220,
+                category: "Furniture",
+                image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRP9_xOxhmBprQYtZRJMilBl6b0kDt66GcyVWhzhXoig3WMASUb7bcAPRpTsqcDA5Qv2lK6VVzXhtlDWBRo48vmFBcSwkiF-GTPIsyjTiYz"
+            }
+        ];
+
+        const productcontainer = document.getElementById('product-container');
+        const searchinput = document.getElementById('search');
+        const categoryselect = document.getElementById('category');
+        const sortselect = document.getElementById('sort');
+
+        function displayproducts(data) {
+            productcontainer.innerHTML = "";
+
+            data.forEach((product) => {
+                const card = document.createElement('div');
+                card.classList.add('product-card');
+
+                card.innerHTML = `
+                <img src="${product.image}" alt="">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p>Price:₹${product.price}</p>
+                <p>${product.category}</p>
+             <button>Shop Now</button>
+                `;
+                productcontainer.appendChild(card);
+            });
+        }
+        function filterproducts() {
+            let productdata = [...products];
+
+            let searchvalue = searchinput.value.toLowerCase();
+            let categoryvalue = categoryselect.value;
+            let sortvalue = sortselect.value;
+
+            productdata = productdata.filter((p) => {
+                return p.name.toLowerCase().includes(searchvalue);
+            })
+            if (categoryvalue !== 'all') {
+                productdata = productdata.filter(p => p.category == categoryvalue)
+            }
+
+            if (sortvalue == 'low') {
+                productdata = productdata.sort((a, b) => a.price - b.price);
+            }
+
+            if (sortvalue == 'high') {
+                productdata = productdata.sort((a, b) => b.price - a.price);
+            }
+            displayproducts(productdata);
+        }
+
+        searchinput.addEventListener("input",filterproducts);
+        categoryselect.addEventListener("change",filterproducts);
+        sortselect.addEventListener("change",filterproducts);
+
+        displayproducts(products);
+
+    </script>
+</body>
+
+</html>
