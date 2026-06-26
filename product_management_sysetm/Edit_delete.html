@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 3% auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 6px 14px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        .edit {
+            background-color: green;
+            color: white;
+            border: 0;
+        }
+
+        .delete {
+            background-color: red;
+            color: white;
+            border: 0;
+        }
+
+        input {
+            width: 1000px;
+            display: flex;
+            margin: 10px 260px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 1px solid black;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            position: relative;
+            left: 260px;
+            margin-bottom: 5px;
+            background-color: rgb(9, 121, 25);
+            color: white;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody"></tbody>
+    </table>
+    <form class="inp">
+        <input type="text" id="name" placeholder="Product Name">
+        <input type="text" id="description" placeholder="Product Description">
+        <input type="text" id="price" placeholder="Product Price">
+        <input type="text" id="category" placeholder="Product Category">
+        <input type="text" id="image" placeholder="Product image Url">
+
+    </form>
+    <button class="btn" id="btn" onclick="addproduct()">Add Product</button>
+
+   <script>
+    const products = [
+        {
+            id: 1,
+            image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+            productName: "iPhone 15 Pro",
+            description: "Apple flagship smartphone with A17 Pro chip.",
+            price: 129999,
+            category: "Mobile"
+        },
+        {
+            id: 2,
+            image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+            productName: "MacBook Air M3",
+            description: "Lightweight laptop with powerful M3 processor.",
+            price: 114999,
+            category: "Laptop"
+        },
+        {
+            id: 3,
+            image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+            productName: "Wireless Headphones",
+            description: "Noise-cancelling over-ear headphones.",
+            price: 7999,
+            category: "Accessories"
+        },
+        {
+            id: 4,
+            image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+            productName: "Running Shoes",
+            description: "Comfortable sports shoes for daily running.",
+            price: 3499,
+            category: "Footwear"
+        },
+        {
+            id: 5,
+            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+            productName: "Smart Watch",
+            description: "Track fitness, heart rate, and notifications.",
+            price: 5999,
+            category: "Wearables"
+        }
+    ];
+
+    const tablebody = document.getElementById("tablebody");
+    let editId = null;
+
+    function displayproducts() {
+        tablebody.innerHTML = "";
+
+        products.forEach(product => {
+            tablebody.innerHTML += `
+                <tr>
+                    <td>${product.id}</td>
+                    <td><img src="${product.image}" alt=""></td>
+                    <td>${product.productName}</td>
+                    <td>${product.description}</td>
+                    <td>₹${product.price}</td>
+                    <td>${product.category}</td>
+                    <td>
+                        <button class="edit" onclick="editProduct(${product.id})">
+                            Edit
+                        </button>
+
+                        <button class="delete" onclick="deleteProduct(${product.id})">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    function addproduct() {
+
+        let name = document.getElementById("name").value;
+        let description = document.getElementById("description").value;
+        let price = document.getElementById("price").value;
+        let category = document.getElementById("category").value;
+        let image = document.getElementById("image").value;
+
+        if (
+            name === "" ||
+            description === "" ||
+            price === "" ||
+            category === "" ||
+            image === ""
+        ) {
+            alert("Please fill all fields");
+            return;
+        }
+
+        if (editId !== null) {
+
+            const product = products.find((p) => p.id === editId);
+
+            product.productName = name;
+            product.description = description;
+            product.price = price;
+            product.category = category;
+            product.image = image;
+
+            editId = null;
+
+            document.getElementById("btn").innerText = "Add Product";
+
+            alert("Product updated successfully.");
+
+        } else {
+
+            const newproduct = {
+                id: products.length
+                    ? products[products.length - 1].id + 1
+                    : 1,
+                productName: name,
+                description: description,
+                price: price,
+                category: category,
+                image: image
+            };
+
+            products.push(newproduct);
+
+            alert("Product added successfully.");
+        }
+
+        clearForm();
+        displayproducts();
+    }
+
+    function editProduct(id) {
+
+        const product = products.find((p) => p.id === id);
+
+        document.getElementById("name").value = product.productName;
+        document.getElementById("description").value = product.description;
+        document.getElementById("price").value = product.price;
+        document.getElementById("category").value = product.category;
+        document.getElementById("image").value = product.image;
+
+        editId = id;
+
+        document.getElementById("btn").innerText = "Update Product";
+    }
+
+    function deleteProduct(id) {
+
+        const confirmDelete = confirm(
+            "Are you sure you want to delete this product?"
+        );
+
+        if (confirmDelete) {
+
+            const index = products.findIndex((p) => p.id === id);
+
+            products.splice(index, 1);
+
+            displayproducts();
+
+            alert("Product deleted successfully.");
+        }
+    }
+
+    function clearForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("description").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("category").value = "";
+        document.getElementById("image").value = "";
+    }
+
+    displayproducts();
+</script>
+</body>
+
+</html>

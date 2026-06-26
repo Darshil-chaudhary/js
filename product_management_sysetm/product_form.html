@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 3% auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 6px 14px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        .edit {
+            background-color: green;
+            color: white;
+            border: 0;
+        }
+
+        .delete {
+            background-color: red;
+            color: white;
+            border: 0;
+        }
+
+        input {
+            width: 1000px;
+            display: flex;
+            margin: 10px 260px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 1px solid black;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            position: relative;
+            left: 260px;
+            margin-bottom: 5px;
+            background-color: rgb(9, 121, 25);
+            color: white;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody"></tbody>
+    </table>
+    <form class="inp">
+        <input type="text" id="name" placeholder="Product Name">
+        <input type="text" id="description" placeholder="Product Description">
+        <input type="text" id="price" placeholder="Product Price">
+        <input type="text" id="category" placeholder="Product Category">
+        <input type="text" id="image" placeholder="Product image Url">
+
+        <button class="btn">Add Product</button>
+    </form>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+                productName: "iPhone 15 Pro",
+                description: "Apple flagship smartphone with A17 Pro chip.",
+                price: 129999,
+                category: "Mobile",
+                action: "Edit/Delete"
+            },
+            {
+                id: 2,
+                image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+                productName: "MacBook Air M3",
+                description: "Lightweight laptop with powerful M3 processor.",
+                price: 114999,
+                category: "Laptop",
+                action: "Edit/Delete"
+            },
+            {
+                id: 3,
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+                productName: "Wireless Headphones",
+                description: "Noise-cancelling over-ear headphones.",
+                price: 7999,
+                category: "Accessories",
+                action: "Edit/Delete"
+            },
+            {
+                id: 4,
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+                productName: "Running Shoes",
+                description: "Comfortable sports shoes for daily running.",
+                price: 3499,
+                category: "Footwear",
+                action: "Edit/Delete"
+            },
+            {
+                id: 5,
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+                productName: "Smart Watch",
+                description: "Track fitness, heart rate, and notifications.",
+                price: 5999,
+                category: "Wearables",
+                action: "Edit/Delete"
+            }
+        ];
+
+        const tablebody = document.getElementById("tablebody");
+
+
+        products.forEach(product => {
+            tablebody.innerHTML += `
+                <tr>
+                    <td>${product.id}</td>
+                    <td><img src="${product.image}" alt=""> </td>
+                    <td>${product.productName}</td>
+                    <td>${product.description}</td>
+                    <td>₹${product.price}</td>
+                    <td>${product.category}</td>
+                    <td>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    </script>
+</body>
+
+</html>
