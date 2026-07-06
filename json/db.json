@@ -1,0 +1,70 @@
+{
+  "Student": [
+    {
+      "id": 1,
+      "name": "Arpit Kansara",
+      "age": 22,
+      "gender": "Male",
+      "course": "MERN Stack",
+      "city": "Ahmedabad",
+      "email": "arpit@example.com",
+      "mobile": "9876543210",
+      "marks": 88
+    },
+    {
+      "id": 2,
+      "name": "Rahul Patel",
+      "age": 21,
+      "gender": "Male",
+      "course": "Python",
+      "city": "Surat",
+      "email": "rahul@example.com",
+      "mobile": "9876543211",
+      "marks": 76
+    },
+    {
+      "id": 3,
+      "name": "Priya Shah",
+      "age": 20,
+      "gender": "Female",
+      "course": "React JS",
+      "city": "Vadodara",
+      "email": "priya@example.com",
+      "mobile": "9876543212",
+      "marks": 92
+    },
+    {
+      "id": 4,
+      "name": "Neha Desai",
+      "age": 23,
+      "gender": "Female",
+      "course": "Full Stack",
+      "city": "Rajkot",
+      "email": "neha@example.com",
+      "mobile": "9876543213",
+      "marks": 85
+    },
+    {
+      "id": 5,
+      "name": "Karan Mehta",
+      "age": 22,
+      "gender": "Male",
+      "course": "Java",
+      "city": "Bhavnagar",
+      "email": "karan@example.com",
+      "mobile": "9876543214",
+      "marks": 81
+    },
+    {
+      "id": 6,
+      "name": "Sneha Joshi",
+      "age": 21,
+      "gender": "Female",
+      "course": "UI/UX Design",
+      "city": "Gandhinagar",
+      "email": "sneha@example.com",
+      "mobile": "9876543215",
+      "marks": 95
+    }
+  ]
+}
