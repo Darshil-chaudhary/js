@@ -1,0 +1,112 @@
+{
+  "weather": [
+    {
+      "id": 1,
+      "city": "Ahmedabad",
+      "temperature": 34,
+      "condition": "Sunny",
+      "humidity": 45,
+      "wind": 12,
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500"
+    },
+    {
+      "id": 2,
+      "city": "Surat",
+      "temperature": 32,
+      "condition": "Cloudy",
+      "humidity": 60,
+      "wind": 10,
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500"
+    },
+    {
+      "id": 3,
+      "city": "Vadodara",
+      "temperature": 33,
+      "condition": "Rainy",
+      "humidity": 70,
+      "wind": 15,
+      "image": "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=500"
+    },
+    {
+      "id": 4,
+      "city": "Rajkot",
+      "temperature": 35,
+      "condition": "Sunny",
+      "humidity": 40,
+      "wind": 8,
+      "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=500"
+    },
+    {
+      "id": 5,
+      "city": "Bhavnagar",
+      "temperature": 31,
+      "condition": "Cloudy",
+      "humidity": 55,
+      "wind": 11,
+      "image": "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=500"
+    },
+    {
+      "id": 6,
+      "city": "Gandhinagar",
+      "temperature": 34,
+      "condition": "Sunny",
+      "humidity": 48,
+      "wind": 9,
+      "image": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=500"
+    },
+    {
+      "id": 7,
+      "city": "Mumbai",
+      "temperature": 29,
+      "condition": "Rainy",
+      "humidity": 80,
+      "wind": 20,
+      "image": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=500"
+    },
+    {
+      "id": 8,
+      "city": "Delhi",
+      "temperature": 36,
+      "condition": "Hot",
+      "humidity": 30,
+      "wind": 14,
+      "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=500"
+    },
+    {
+      "id": 9,
+      "city": "Jaipur",
+      "temperature": 37,
+      "condition": "Sunny",
+      "humidity": 25,
+      "wind": 13,
+      "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500"
+    },
+    {
+      "id": 10,
+      "city": "Bangalore",
+      "temperature": 27,
+      "condition": "Pleasant",
+      "humidity": 65,
+      "wind": 10,
+      "image": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=500"
+    },
+    {
+      "id": 11,
+      "city": "Chennai",
+      "temperature": 33,
+      "condition": "Humid",
+      "humidity": 75,
+      "wind": 18,
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500"
+    },
+    {
+      "id": 12,
+      "city": "Kolkata",
+      "temperature": 30,
+      "condition": "Rainy",
+      "humidity": 85,
+      "wind": 16,
+      "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?w=500"
+    }
+  ]
+}
