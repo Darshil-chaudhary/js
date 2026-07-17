@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product CRUD App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Product CRUD Application</h1>
+
+        <!-- Product Form -->
+
+        <form id="productForm">
+
+            <div class="input-group">
+                <label>Product Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter Product Title">
+            </div>
+
+            <div class="input-group">
+                <label>Price</label>
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="Enter Price">
+            </div>
+
+            <div class="input-group">
+                <label>Image URL</label>
+                <input
+                    type="text"
+                    id="image"
+                    placeholder="Paste Image URL">
+            </div>
+
+            <div class="input-group">
+                <label>Category</label>
+
+                <select id="category">
+                    <option value="">Select Category</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Furniture</option>
+                    <option>Books</option>
+                    <option>Sports</option>
+                </select>
+
+            </div>
+
+            <button type="submit" id="submitBtn">
+                Add Product
+            </button>
+
+        </form>
+
+        <!-- Search Filter Sort -->
+
+        <div class="controls">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search Product...">
+
+            <select id="filter">
+
+                <option value="All">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Books">Books</option>
+                <option value="Sports">Sports</option>
+
+            </select>
+
+            <select id="sort">
+
+                <option value="">Sort Price</option>
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+
+            </select>
+
+        </div>
+
+        <h2>
+            Total Products :
+            <span id="count">0</span>
+        </h2>
+
+        <!-- Product Table -->
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="productList">
+
+                <!-- Products Render Here -->
+
+            </tbody>
+
+        </table>
+
+        <h3 id="message"></h3>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
